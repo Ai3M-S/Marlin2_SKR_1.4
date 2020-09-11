@@ -94,22 +94,22 @@
 //
 // Filament Runout Sensor
 //
-#define FIL_RUNOUT_PIN                     P1_26  // E0DET
+#define FIL_RUNOUT_PIN                     P1_25  // E0DET
 //#define FIL_RUNOUT2_PIN                    P1_25  // E1DET
 
 //
 // Power Supply Control
 //
-#ifndef PS_ON_PIN
-  #define PS_ON_PIN                        P1_00  // PWRDET
-#endif
+//#ifndef PS_ON_PIN
+//  #define PS_ON_PIN                        P1_00  // PWRDET
+//#endif
 
 //
 // Power Loss Detection
 //
-#ifndef POWER_LOSS_PIN
-  #define POWER_LOSS_PIN                   P1_00  // PWRDET
-#endif
+//#ifndef POWER_LOSS_PIN
+//  #define POWER_LOSS_PIN                   P1_00  // PWRDET
+//#endif
 
 //
 // Steppers
@@ -401,6 +401,6 @@
 #define X_MIN_PIN P1_29
 #define X_MAX_PIN P1_26
 #define Y_MIN_PIN P1_28
-#define Y_MAX_PIN P1_25
+//#define Y_MAX_PIN P1_25
 #define Z_MIN_PIN P1_27
-#define Z_MAX_PIN P1_00
+//#define Z_MAX_PIN P1_00
