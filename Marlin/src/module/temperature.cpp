@@ -37,7 +37,7 @@
 #include "../lcd/ultralcd.h"
 
 #if ENABLED(DWIN_CREALITY_LCD)
-  #include "../lcd/dwin/e3v2/dwin.h"
+  #include "../lcd/dwin/dwin.h"
 #endif
 
 #if ENABLED(EXTENSIBLE_UI)
