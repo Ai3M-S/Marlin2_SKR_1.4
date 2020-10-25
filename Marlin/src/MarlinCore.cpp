@@ -289,6 +289,25 @@ void setup_powerhold() {
   #endif
 }
 
+#ifdef ENDSTOP_BEEP
+  void EndstopBeep() {
+    static char last_status=((READ(X_MIN_PIN)<<3)|(READ(Y_MIN_PIN)<<2)|(READ(Y_MAX_PIN)<<1)|READ(Z_MIN_PIN));
+    static unsigned char now_status;
+
+    now_status=((READ(X_MIN_PIN)<<3)|(READ(Y_MIN_PIN)<<2)|(READ(Y_MAX_PIN)<<1)|READ(Z_MIN_PIN))&0xff;
+
+    if(now_status<last_status) {
+      static millis_t endstop_ms = millis() + 200UL;
+      if (ELAPSED(millis(), endstop_ms)) {
+        buzzer.tone(60, 2000);
+      }
+    last_status=now_status;
+    } else if(now_status!=last_status) {
+      last_status=now_status;
+    }
+  }
+#endif
+
 /**
  * Stepper Reset (RigidBoard, et.al.)
  */
